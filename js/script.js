@@ -1,3 +1,8 @@
+
+////////////////////////
+// VALIDDAR CAMPO RUT //
+////////////////////////
+
 function verificarRut(rut) {
     // Despejar puntos y guión al ingresar datos
     var valor = rut.value.replace('.','');
@@ -44,3 +49,70 @@ function verificarRut(rut) {
     // Limpiar errores si todo está correcto
     rut.setCustomValidity('');
 }
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+jQuery(function() {
+
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+      });
+      
+    jQuery( "#formulario" ).validate({
+        
+           rules: {
+                   nombre: {
+                           required: true,
+                           minlength: 4,
+                           maxlength: 20
+                   },
+
+                   correo: {
+                           required: true,
+                           email: true
+                   },
+                   /*rut:{
+                       required: true,
+                       /*remote: {
+                            url: "script",
+                            type: "post",
+                            data: {
+                                rut: function() {
+                                return $( "#rut" ).val();
+                                }
+                            }
+                        }
+                    },*/
+                
+
+                    telefono: {
+                            required: true,
+                            minlength: 8,
+                            maxlength: 12
+                    }
+
+                },
+           
+           messages: {
+                    nombre: {
+                            required: "Por favor, indica tu nombre",
+                            minlength: jQuery.validator.format("Necesitamos por lo menos {0} caracteres"),
+                            maxlength: jQuery.validator.format("{0} Demasiados caracteres")
+                    },
+
+                    correo: {
+                            required: "Ingresa una dirección de correo electrónico",
+                            email: "Correo no válido"
+                    },
+
+                    telefono: {
+                            minlength: jQuery.validator.format("Necesitamos por lo menos {0} caracteres"),
+                            maxlength: jQuery.validator.format("{0} Demasiados caracteres")
+                    }
+            }
+
+           
+    });
+})
+

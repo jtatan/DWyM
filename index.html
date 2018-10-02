@@ -13,6 +13,8 @@
 <!--Slick-->
   <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
+<!--jQuery Validation--> 
+  <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
 <!--General--> 
 <link rel="stylesheet" href="css/estilos.css"> 
 
@@ -136,36 +138,66 @@
         </section>
 
 <!--Pie de Página-->
-      <footer id="credits">
-        <p>Desarrollo Web y Mobile</p>      
-          <form id="formulario" name="formulario" method="get"  action="">
+      <footer class="row" id="credits">
+        <div class="col-xs-12"><p>Desarrollo Web y Mobile</p></div>      
+          <form class="row" id="formulario" name="formulario" method="get"  action="">
             <p>
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" class="required" placeholder="Juan Pérez" minlength=”3” size="20" />
-            </p>
-            <p>
-              <label for="correo">Correo:</label>
-              <input type="mail" name="correo" class="required" placeholder="correo@correo.cl"/>
-            </p>
-            <p>
-              <label for="rutl">Rut:</label>
-              <input type="text" id="rut" name="rut" placeholder="12345678-9" required oninput="verificarRut(this)"/>
+              <div id="label" class="col-xs-12">            
+                  <label for="nombre">Nombre:</label>
+              </div>
+              <div class="col-xs-12">
+                  <input type="text" name="nombre" placeholder="Juan Pérez" minlength=”3” size="20" />
+              </div>
             </p>
             <p>
-              <label for="telefono">Teléfono:</label>
-              <input type="text" name="telefono" class="required" placeholder="+56 9 12345678"/>
+              <div id="label" class="col-xs-12">
+                  <label for="correo">Correo:</label>
+              </div>
+              <div class="col-xs-12">
+                  <input type="email" name="correo" placeholder="correo@correo.cl"/>
+              </div>
             </p>
             <p>
-              <label for="opcion">Tipo de vivienda</label>
-                <select id="respuesta_pregunta" name="respuesta">
-                    <option value="vivienda1" selected="selected">vivienda1</option>
-                    <option value="vivienda2">vivienda2</option>
-                    <option value="vivienda3">vivienda3</option>
-                </select>
+              <div id="label" class="col-xs-12">
+                  <label for="rut">Rut:</label>
+              </div>
+              <div class="col-xs-12">
+                  <input type="text" id="rut" name="rut" placeholder="12345678-9" required oninput="verificarRut(this)"/>
+              </div>
             </p>
-            <p id="boton_contenedor">
-                <input class="boton_enviar" type="submit" value="Enviar"/>
+            <p>
+              <div id="label" class="col-xs-12">
+                  <label for="telefono">Teléfono:</label>
+              </div>
+              <div class="col-xs-12">
+                  <input type="text" name="telefono" placeholder="+56 9 12345678"/>
+              </div>
             </p>
+            <p>
+              <div id="label" class="col-xs-12">
+                  <label for="opcion">Tipo de vivienda</label>
+              </div>
+              <div class="col-xs-12">
+                    <select id="respuesta_pregunta" name="respuesta">
+                      <option value="vivienda1" selected="selected">vivienda1</option>
+                      <option value="vivienda2">vivienda2</option>
+                      <option value="vivienda3">vivienda3</option>
+                    </select>
+              </div>
+            </p>
+            <p>
+              <div id="label" class="col-xs-12">
+                  <label for="mensaje">Mensaje</label>
+              </div>
+              <div class="col-xs-12">
+                  <textarea id="mensaje" name="mensaje" maxlength="140" rows="5"></textarea>
+                </div>
+            </p>
+              <div id="label" class="col-xs-12">
+                <p id="boton_contenedor">
+                    <input class="boton_enviar" type="submit" value="Enviar"/>
+                </p>
+              </div>
         </form>
       </footer>
 
@@ -175,6 +207,7 @@
 <!--jQuery-->
   <script src="js/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>
   <script src="js/script.js" type="text/javascript"></script>
+  <script src="js/scriptvaliation.js" type="text/javascript"></script>
 <!--jQuery validation--> 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
 <!--Fancybox-->
